@@ -1,0 +1,207 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.qniti.selia"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:6:5-67
+11-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+12-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:7:5-80
+12-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:7:22-77
+13    <uses-permission android:name="android.permission.CAMERA" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+13-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:21:5-65
+13-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:21:22-62
+14    <uses-feature
+14-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:24:5-26:36
+15        android:name="android.hardware.camera"
+15-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:25:9-47
+16        android:required="false" />
+16-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:26:9-33
+17    <uses-feature
+17-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:27:5-29:36
+18        android:name="android.hardware.camera.front"
+18-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:28:9-53
+19        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+19-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:29:9-33
+20    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+21    <uses-feature
+21-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:32:5-34:36
+22        android:name="android.hardware.camera.autofocus"
+22-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:33:9-57
+23        android:required="false" />
+23-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:34:9-33
+24    <uses-feature
+24-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:35:5-37:36
+25        android:name="android.hardware.camera.flash"
+25-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:36:9-53
+26        android:required="false" />
+26-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:37:9-33
+27    <uses-feature
+27-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:38:5-40:36
+28        android:name="android.hardware.screen.landscape"
+28-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:39:9-57
+29        android:required="false" />
+29-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:40:9-33
+30    <uses-feature
+30-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:41:5-43:36
+31        android:name="android.hardware.wifi"
+31-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:42:9-45
+32        android:required="false" />
+32-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:43:9-33
+33
+34    <application
+34-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:9:5-75:19
+35        android:name="com.qniti.qselia.CustomFontApp"
+35-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:10:9-38
+36        android:allowBackup="true"
+36-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:11:9-35
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.1.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\476e418bae6a1646436b14a2350f3166\core-1.1.0\AndroidManifest.xml:24:18-86
+38        android:debuggable="true"
+39        android:icon="@mipmap/ic_launcher"
+39-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:12:9-43
+40        android:label="@string/app_name"
+40-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:13:9-41
+41        android:networkSecurityConfig="@xml/network_security_config"
+41-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:14:9-69
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:15:9-54
+43        android:supportsRtl="true"
+43-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:16:9-35
+44        android:testOnly="true"
+45        android:theme="@style/SplashTheme" >
+45-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:17:9-43
+46        <activity
+46-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:18:9-22:65
+47            android:name="com.qniti.qselia.ForgetPassword"
+47-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:18:19-49
+48            android:configChanges="orientation"
+48-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:19:13-48
+49            android:exported="true"
+49-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:21:13-36
+50            android:screenOrientation="portrait" />
+50-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:20:13-49
+51        <activity
+51-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:23:9-28:56
+52            android:name="com.qniti.qselia.ChangePassword"
+52-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:24:13-43
+53            android:configChanges="orientation"
+53-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:25:13-48
+54            android:exported="true"
+54-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:27:13-36
+55            android:screenOrientation="portrait" />
+55-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:26:13-49
+56        <activity
+56-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:29:9-34:56
+57            android:name="com.qniti.qselia.Profile"
+57-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:30:13-36
+58            android:configChanges="orientation"
+58-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:31:13-48
+59            android:exported="true"
+59-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:33:13-36
+60            android:screenOrientation="portrait" />
+60-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:32:13-49
+61        <activity
+61-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:35:9-40:56
+62            android:name="com.qniti.qselia.PastVisited"
+62-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:36:13-40
+63            android:configChanges="orientation"
+63-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:37:13-48
+64            android:exported="true"
+64-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:39:13-36
+65            android:screenOrientation="portrait" />
+65-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:38:13-49
+66        <activity
+66-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:41:9-46:56
+67            android:name="com.qniti.qselia.UserLocationDetails"
+67-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:42:13-48
+68            android:configChanges="orientation"
+68-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:43:13-48
+69            android:exported="true"
+69-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:45:13-36
+70            android:screenOrientation="portrait" />
+70-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:44:13-49
+71        <activity
+71-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:47:9-52:56
+72            android:name="com.qniti.qselia.RegisterActivity"
+72-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:48:13-45
+73            android:configChanges="orientation"
+73-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:49:13-48
+74            android:exported="true"
+74-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:51:13-36
+75            android:screenOrientation="portrait" />
+75-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:50:13-49
+76        <activity
+76-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:53:9-64:20
+77            android:name="com.qniti.qselia.LoginActivity"
+77-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:54:13-42
+78            android:configChanges="orientation"
+78-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:55:13-48
+79            android:exported="true"
+79-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:56:13-36
+80            android:screenOrientation="portrait" >
+80-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:57:13-49
+81            <intent-filter>
+81-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:59:13-63:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:60:17-69
+82-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:60:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:62:17-77
+84-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:62:27-74
+85            </intent-filter>
+86        </activity>
+87        <activity
+87-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:65:9-70:56
+88            android:name="com.qniti.qselia.MainActivity"
+88-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:66:13-41
+89            android:configChanges="orientation"
+89-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:68:13-48
+90            android:exported="true"
+90-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:67:13-36
+91            android:screenOrientation="portrait" />
+91-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:69:13-49
+92
+93        <uses-library
+93-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:72:9-74:39
+94            android:name="org.apache.http.legacy"
+94-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:73:13-50
+95            android:required="false" />
+95-->C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:74:13-37
+96
+97        <activity
+97-->[pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:12:9-16:66
+98            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
+98-->[pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:13:13-86
+99            android:exported="false"
+99-->[pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:14:13-37
+100            android:label=""
+100-->[pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:15:13-29
+101            android:theme="@style/EasyPermissions.Transparent" />
+101-->[pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:16:13-63
+102        <activity
+102-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:46:9-52:63
+103            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+103-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:47:13-74
+104            android:clearTaskOnLaunch="true"
+104-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:48:13-45
+105            android:screenOrientation="sensorLandscape"
+105-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:49:13-56
+106            android:stateNotNeeded="true"
+106-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:50:13-42
+107            android:theme="@style/zxing_CaptureTheme"
+107-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:51:13-54
+108            android:windowSoftInputMode="stateAlwaysHidden" />
+108-->[com.journeyapps:zxing-android-embedded:3.3.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\3009d471e796e138ae8fb9f4cc88f674\jetified-zxing-android-embedded-3.3.0\AndroidManifest.xml:52:13-60
+109    </application>
+110
+111</manifest>

@@ -31,9 +31,9 @@ import java.util.Map;
 
 public class Profile extends AppCompatActivity {
 
-    String userID,name,phone,email;
+    String userID,name,phone,email,ccemail;
     TextView showname;
-    EditText chgphone,chgemail,chgaddr;
+    EditText chgphone,chgemail,chgccemail;
     Button logout,toChgPass,editProfile;
 
 
@@ -47,11 +47,13 @@ public class Profile extends AppCompatActivity {
         name = sharedPreferences.getString(Config.NAME_ID2, "0");
         phone= sharedPreferences.getString(Config.PHONE_ID2, "0");
         email = sharedPreferences.getString(Config.EMAIL_ID2, "0");
+        ccemail = sharedPreferences.getString(Config.CC_EMAIL_ID2, "0");
         //address = sharedPreferences.getString(Config.ADDRESS_ID2, "0");
 
         showname = findViewById(R.id.username);
         chgphone = findViewById(R.id.chgphone);
         chgemail = findViewById(R.id.chgemail);
+        chgccemail = findViewById(R.id.chgccemail);
         //chgaddr = findViewById(R.id.chgaddress);
         logout = findViewById(R.id.logoutBtn);
         toChgPass = findViewById(R.id.chgpassBtn);
@@ -60,6 +62,7 @@ public class Profile extends AppCompatActivity {
         showname.setText(name);
         chgphone.setText(phone);
         chgemail.setText(email);
+        chgccemail.setText(ccemail);
         //chgaddr.setText(address);
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +132,7 @@ public class Profile extends AppCompatActivity {
 
                 phone = chgphone.getText().toString().trim();
                 email = chgemail.getText().toString().trim();
+                ccemail = chgccemail.getText().toString().trim();
                 //address = chgaddr.getText().toString().trim();
 
                 if (email.length() < 8) {
@@ -216,6 +220,7 @@ public class Profile extends AppCompatActivity {
                                             params.put("userID", userID);
                                             params.put("userphone", phone);
                                             params.put("useremail", email);
+                                            params.put("ccemail", ccemail);
                                            // params.put("useraddr", address);
                                             return params;
                                         }

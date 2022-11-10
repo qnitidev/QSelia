@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                                 editor.putString(Config.PLACE_ID, scanID);
                                 editor.putString(Config.SCAN_DATE, currentDate);
                                 editor.putString(Config.SCAN_TIME, curTime);
-                                editor.putString(Config.LOG_STATUS, "New");
+                                editor.putString(Config.LOG_STATUS, "null");
                                 editor.putString(Config.LOG_ID2, "New Entry");
                                 editor.putString(Config.EXIT_DATE, "");
                                 editor.putString(Config.EXIT_TIME, "");

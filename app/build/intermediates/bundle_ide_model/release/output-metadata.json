@@ -4,7 +4,7 @@
     "type": "BUNDLE",
     "kind": "RegularFile"
   },
-  "applicationId": "com.qniti.qhadir",
+  "applicationId": "com.qniti.selia",
   "variantName": "release",
   "elements": [
     {

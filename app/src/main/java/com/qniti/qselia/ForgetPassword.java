@@ -69,7 +69,7 @@ public class ForgetPassword extends AppCompatActivity {
                                     final ProgressDialog loading = ProgressDialog.show(ForgetPassword.this, "Please Wait", "Contacting Server", false, false);
 
                                     StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                                            "https://qhadir.qniti.com/forgotpass.php", new Response.Listener<String>() {
+                                            "https://qhadir.qniti.com/staff_forgotpass.php", new Response.Listener<String>() {
                                         @Override
                                         public void onResponse(String response) {
 

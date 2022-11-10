@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     String userID;
     String nameID;
     String phoneID;
-    String emailID;
+    String emailID,ccEmail;
     //String addressID;
     ImageButton about;
     CheckBox dontShowAgain;
@@ -339,6 +339,7 @@ public class LoginActivity extends AppCompatActivity {
                                 //addressID = user.getString("useraddr");
                                 phoneID = user.getString("userphone");
                                 emailID = user.getString("useremail");
+                                ccEmail = user.getString("cc_email");
                             }
 
                             //add shared preference ID,nama,credit here
@@ -354,7 +355,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString(Config.NAME_ID2, nameID);
                             editor.putString(Config.PHONE_ID2, phoneID);
                             editor.putString(Config.EMAIL_ID2, emailID);
-                            //editor.putString(Config.ADDRESS_ID2, addressID);
+                            editor.putString(Config.CC_EMAIL_ID2, ccEmail);
 
 
                             // Saving values to editor

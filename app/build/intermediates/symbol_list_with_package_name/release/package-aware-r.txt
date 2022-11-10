@@ -1,4 +1,4 @@
-com.qniti.qhadir
+com.qniti.qselia
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -27,6 +27,9 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+anim rotation
+anim scale_down
+anim scale_up
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -465,6 +468,19 @@ attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
 attr splitTrack
+attr srb_clearRatingEnabled
+attr srb_clickable
+attr srb_drawableEmpty
+attr srb_drawableFilled
+attr srb_isIndicator
+attr srb_minimumStars
+attr srb_numStars
+attr srb_rating
+attr srb_scrollable
+attr srb_starHeight
+attr srb_starPadding
+attr srb_starWidth
+attr srb_stepSize
 attr srcCompat
 attr stackFromEnd
 attr state_above_anchor
@@ -629,6 +645,7 @@ color background_floating_material_light
 color background_material_dark
 color background_material_light
 color backgroundcolor
+color body_grey
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -646,6 +663,7 @@ color colorBackButton
 color colorBackgroundDark
 color colorBlack
 color colorCheckbox
+color colorDarkGrey
 color colorDeepBlue
 color colorHeader
 color colorHeaderDark
@@ -661,6 +679,7 @@ color colorRed
 color colorReport
 color colorSplash
 color colorWhite
+color default_bg
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -680,10 +699,12 @@ color dim_foreground_material_dark
 color dim_foreground_material_light
 color error_color_material_dark
 color error_color_material_light
+color font_blue
 color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color label_grey
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -836,6 +857,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -892,6 +915,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -905,6 +929,9 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen largetext
+dimen mediumtext
+dimen mmtext
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -953,6 +980,8 @@ dimen mtrl_textinput_box_stroke_width_default
 dimen mtrl_textinput_box_stroke_width_focused
 dimen mtrl_textinput_outline_box_expanded_padding
 dimen mtrl_toolbar_default_height
+dimen nav_header_height
+dimen nav_header_vertical_spacing
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -968,6 +997,8 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen sltext
+dimen smalltext
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -976,6 +1007,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen xstext
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -1064,6 +1096,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable adaptergreenstroke
 drawable adaptergreystroke
+drawable adaptergreystrokewhite
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_splash
@@ -1099,6 +1132,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable empty
+drawable filled
 drawable flag_my
 drawable flag_us
 drawable gradientbg45blue
@@ -1147,6 +1182,8 @@ drawable ic_qr_code
 drawable ic_qr_code_scan
 drawable ic_sendaddress
 drawable ic_seterusnya
+drawable ic_star_empty
+drawable ic_star_filled
 drawable ic_submit
 drawable ic_tick
 drawable ic_tick_grad
@@ -1184,6 +1221,7 @@ drawable splashbg
 drawable textboxcornerblack
 drawable textboxcornergrey
 drawable textboxcornerwhite
+drawable textboxcornerwhitev2
 drawable tick
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1261,8 +1299,6 @@ id btnLogin
 id btntoForget
 id btntoRegister
 id buttonPanel
-id cancelTxt
-id cancelTxtUp
 id center
 id centerCrop
 id center_horizontal
@@ -1272,6 +1308,7 @@ id checkbox
 id checked
 id chgPassBtn2
 id chgPassForget
+id chgccemail
 id chgemail
 id chgpassBtn
 id chgphone
@@ -1298,7 +1335,9 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id editTextMsgPopup
 id edit_query
+id enCcEmail
 id enConfirmPass
 id enEmail
 id enName
@@ -1307,12 +1346,11 @@ id enPhone
 id end
 id enterAlways
 id enterAlwaysCollapsed
-id enterBtn
 id enterDate
-id enterdateNtime
-id exitBtn
+id enterTime
+id enterdateTxt
+id entertimeTxt
 id exitUntilCollapsed
-id exitdatentime
 id expand_activities_button
 id expanded_menu
 id fill
@@ -1324,6 +1362,7 @@ id fitXY
 id fixed
 id forever
 id ghost_view
+id giveReviewBtn
 id gone
 id group_divider
 id groups
@@ -1362,6 +1401,7 @@ id navigation_header_container
 id never
 id newPass
 id none
+id noratingTv
 id normal
 id notification_background
 id notification_main_column
@@ -1380,14 +1420,17 @@ id percent
 id phoneNumtxt
 id pin
 id placeName
-id placeaddress
-id placephone
 id profile
 id progress_circular
 id progress_horizontal
 id radio
+id ratingBar
+id ratingBarList
 id recylcerView
+id refresh_layout
+id refresh_layout_2
 id registerBtn
+id remarkTxt
 id right
 id right_icon
 id right_side
@@ -1454,12 +1497,11 @@ id textSpacerNoTitle
 id textStart
 id textView29
 id textView5
-id textViewGone
+id textViewTitle2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
 id textinput_helper_text
-id tick
 id time
 id title
 id titleDividerNoCustom
@@ -1473,6 +1515,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id unchecked
+id underNameTxt
+id underemailTxt
+id underphoneTxt
 id uniform
 id unlabeled
 id up
@@ -1584,6 +1629,8 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout past_visited_list
+layout past_visited_list_backup
+layout rating_popup
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1613,6 +1660,7 @@ mipmap individualbtn
 mipmap menu
 mipmap menubutton
 mipmap menuicon
+mipmap no_data
 mipmap share
 mipmap splashscreen
 mipmap staff
@@ -2201,6 +2249,7 @@ styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
 styleable AppCompatTextHelper android_textAppearance android_drawableTop android_drawableBottom android_drawableLeft android_drawableRight android_drawableStart android_drawableEnd
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType drawableBottomCompat drawableEndCompat drawableLeftCompat drawableRightCompat drawableStartCompat drawableTint drawableTintMode drawableTopCompat firstBaselineToTopHeight fontFamily fontVariationSettings lastBaselineToBottomHeight lineHeight textAllCaps textLocale
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listChoiceIndicatorMultipleAnimated listChoiceIndicatorSingleAnimated listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingEnd listPreferredItemPaddingLeft listPreferredItemPaddingRight listPreferredItemPaddingStart panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
+styleable BaseRatingBar srb_clearRatingEnabled srb_clickable srb_drawableEmpty srb_drawableFilled srb_isIndicator srb_minimumStars srb_numStars srb_rating srb_scrollable srb_starHeight srb_starPadding srb_starWidth srb_stepSize
 styleable BottomAppBar backgroundTint fabAlignmentMode fabCradleMargin fabCradleRoundedCornerRadius fabCradleVerticalOffset hideOnScroll
 styleable BottomNavigationView elevation itemBackground itemHorizontalTranslationEnabled itemIconSize itemIconTint itemTextAppearanceActive itemTextAppearanceInactive itemTextColor labelVisibilityMode menu
 styleable BottomSheetBehavior_Layout behavior_fitToContents behavior_hideable behavior_peekHeight behavior_skipCollapsed

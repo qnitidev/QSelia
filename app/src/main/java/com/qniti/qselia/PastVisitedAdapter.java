@@ -1,5 +1,6 @@
 package com.qniti.qselia;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +11,11 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.willy.ratingbar.ScaleRatingBar;
+
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PastVisitedAdapter extends RecyclerView.Adapter<PastVisitedAdapter.PastVisitedViewHolder> {
 
@@ -37,21 +42,27 @@ public class PastVisitedAdapter extends RecyclerView.Adapter<PastVisitedAdapter.
     }
 
     @Override
-    public void onBindViewHolder(PastVisitedViewHolder holder,final int position) {
+    public void onBindViewHolder(PastVisitedViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         Log log = logList.get(position);
 
 
          //getName
-        holder.placeName.setText(log.getPlaceName()); //GetICnum
-        holder.logStatus.setText(log.getLogStatus());
+        holder.userName.setText(capitalize(log.getUserName()));
+        holder.enterDate.setText(log.getLogDate());
+        holder.enterTime.setText(log.getLogTime());
 
-        if("Inside".equalsIgnoreCase(log.getLogStatus())){
-            holder.enterDate.setText("Enter On "+log.getEnterDate()+" "+log.getEnterTime());
-            holder.test.setBackgroundColor(ContextCompat.getColor(mCtx, R.color.colorNavIcon));
-            holder.logStatus.setTextColor(ContextCompat.getColor(mCtx,R.color.colorLightGreen));
-        }else if("Visited".equalsIgnoreCase(log.getLogStatus())){
-            holder.enterDate.setText("Visited On "+log.getEnterDate()+" "+log.getEnterTime());
-            holder.logStatus.setTextColor(ContextCompat.getColor(mCtx,R.color.red));
+        if (!("null".equalsIgnoreCase(log.getRating()))){
+
+            holder.noRating.setVisibility(View.GONE);
+            holder.ratingBar.setVisibility(View.VISIBLE);
+            holder.ratingBar.setRating(Float.valueOf(log.getRating()));
+
+        }else {
+
+            holder.noRating.setVisibility(View.VISIBLE);
+            holder.ratingBar.setVisibility(View.GONE);
+
+
         }
 
         holder.test.setOnClickListener(new View.OnClickListener() {
@@ -69,18 +80,31 @@ public class PastVisitedAdapter extends RecyclerView.Adapter<PastVisitedAdapter.
 
     class PastVisitedViewHolder extends RecyclerView.ViewHolder {
 
-        TextView enterDate, placeName,logStatus;
+        TextView enterDate, userName,enterTime, noRating;
         // ImageView imageView;
         RelativeLayout test;
+        ScaleRatingBar ratingBar;
 
         public PastVisitedViewHolder(View itemView) {
             super(itemView);
 
             test=itemView.findViewById(R.id.testing);
             enterDate = itemView.findViewById(R.id.enterDate);
-            placeName = itemView.findViewById(R.id.placeName);
-            logStatus = itemView.findViewById(R.id.logStatus);
+            userName = itemView.findViewById(R.id.placeName);
+            enterTime = itemView.findViewById(R.id.enterTime);
+            ratingBar = itemView.findViewById(R.id.ratingBarList);
+            noRating = itemView.findViewById(R.id.noratingTv);
         }
+    }
+    //Auto Capitalize First Character of Each Word
+    private String capitalize(String capString){
+        StringBuffer capBuffer = new StringBuffer();
+        Matcher capMatcher = Pattern.compile("([a-z-éá])([a-z-éá]*)", Pattern.CASE_INSENSITIVE).matcher(capString);
+        while (capMatcher.find()){
+            capMatcher.appendReplacement(capBuffer, capMatcher.group(1).toUpperCase() + capMatcher.group(2).toLowerCase());
+        }
+
+        return capMatcher.appendTail(capBuffer).toString();
     }
     public void setOnClick(OnItemClicked onClick)
     {

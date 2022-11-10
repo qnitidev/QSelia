@@ -6,6 +6,7 @@ INJECTED from C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xm
 INJECTED from C:\Users\Bie\StudioProjects\Qselia\app\src\main\AndroidManifest.xml:2:1-77:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\1252afd1dc9f5469c30b4174466bb74f\material-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:2:1-19:12
+MERGED from [com.github.ome450901:SimpleRatingBar:1.5.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c71cf85cca3f37a1ed482b8d20bbfb0\jetified-SimpleRatingBar-1.5.1\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\54448c056128a2c935b0bb4d9a555ae7\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c2d055b9576f9b1a68fe7075632917c\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\a34993d2ff5b4e139946f206928d4df3\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
@@ -74,6 +75,8 @@ MERGED from [com.google.android.material:material:1.0.0] C:\Users\Bie\.gradle\ca
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\1252afd1dc9f5469c30b4174466bb74f\material-1.0.0\AndroidManifest.xml:22:5-20
 MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:11:5-17:19
 MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:11:5-17:19
+MERGED from [com.github.ome450901:SimpleRatingBar:1.5.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c71cf85cca3f37a1ed482b8d20bbfb0\jetified-SimpleRatingBar-1.5.1\AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.ome450901:SimpleRatingBar:1.5.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c71cf85cca3f37a1ed482b8d20bbfb0\jetified-SimpleRatingBar-1.5.1\AndroidManifest.xml:11:5-12:19
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c2d055b9576f9b1a68fe7075632917c\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c2d055b9576f9b1a68fe7075632917c\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\a34993d2ff5b4e139946f206928d4df3\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
@@ -222,6 +225,8 @@ MERGED from [com.google.android.material:material:1.0.0] C:\Users\Bie\.gradle\ca
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\1252afd1dc9f5469c30b4174466bb74f\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [pub.devrel:easypermissions:3.0.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\fd2b98e70f0c28e8c3cf9ba6aac9e889\jetified-easypermissions-3.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.ome450901:SimpleRatingBar:1.5.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c71cf85cca3f37a1ed482b8d20bbfb0\jetified-SimpleRatingBar-1.5.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.ome450901:SimpleRatingBar:1.5.1] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c71cf85cca3f37a1ed482b8d20bbfb0\jetified-SimpleRatingBar-1.5.1\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\54448c056128a2c935b0bb4d9a555ae7\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\54448c056128a2c935b0bb4d9a555ae7\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Bie\.gradle\caches\transforms-2\files-2.1\5c2d055b9576f9b1a68fe7075632917c\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41

@@ -38,6 +38,8 @@ com/qniti/qselia/PastVisited.java
  com.qniti.qselia.PastVisited
  com.qniti.qselia.PastVisited$1
  com.qniti.qselia.PastVisited$2
+ com.qniti.qselia.PastVisited$3
+ com.qniti.qselia.PastVisited$4
 com/qniti/qselia/FontsOverride.java
  com.qniti.qselia.FontsOverride
 com/qniti/qselia/ForgetPassword.java
@@ -83,11 +85,7 @@ com/qniti/qselia/UserLocationDetails.java
  com.qniti.qselia.UserLocationDetails
  com.qniti.qselia.UserLocationDetails$1
  com.qniti.qselia.UserLocationDetails$1$1
- com.qniti.qselia.UserLocationDetails$1$1$1
- com.qniti.qselia.UserLocationDetails$1$1$2
- com.qniti.qselia.UserLocationDetails$1$1$3
  com.qniti.qselia.UserLocationDetails$1$2
- com.qniti.qselia.UserLocationDetails$1$3
  com.qniti.qselia.UserLocationDetails$2
  com.qniti.qselia.UserLocationDetails$3
  com.qniti.qselia.UserLocationDetails$4

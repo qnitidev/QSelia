@@ -70,6 +70,18 @@
                     android:hint="Enter Your Email"
                     android:inputType="textEmailAddress" />
 
+                <EditText
+                    android:id="@+id/enCcEmail"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/textboxcornerwhite"
+                    android:padding="10dp"
+                    android:ems="10"
+                    android:textSize="18dp"
+                    android:hint="Enter Cc Email"
+                    android:inputType="textEmailAddress" />
+
                 <!--<EditText
                     android:id="@+id/enAddress"
                     android:layout_marginTop="20dp"

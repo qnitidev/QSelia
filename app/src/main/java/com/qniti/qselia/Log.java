@@ -3,58 +3,52 @@ package com.qniti.qselia;
 public class Log {
 
 
-    private String logID;
-    private String enterDate;
-    private String enterTime;
-    private String exitDate;
-    private String exitTime;
-    private String placeID;
-    private String placeName;
-    private String logStatus;
+    private String staff_logID;
+    private String logDate;
+    private String logTime;
+    private String userName;
+    private String userID;
+    private String rating;
+    private String remark;
 
-    public Log(String logID, String enterDate, String enterTime, String exitDate, String exitTime,String placeID, String placeName, String logStatus) {
 
-        this.logID = logID;
-        this.enterDate = enterDate;
-        this.enterTime = enterTime;
-        this.exitDate = exitDate;
-        this.exitTime = exitTime;
-        this.placeID = placeID;
-        this.placeName = placeName;
-        this.logStatus = logStatus;
+    public Log(String staff_logID, String logDate, String logTime, String userName,String userID, String rating,String remark) {
+
+        this.staff_logID = staff_logID;
+        this.logDate = logDate;
+        this.logTime = logTime;
+        this.userName = userName;
+        this.userID = userID;
+        this.rating = rating;
+        this.remark = remark;
+
 
     }
 
-    public String getLogID() {
-        return logID;
+    public String getStaff_logID() {
+        return staff_logID;
     }
 
-    public String getEnterDate() {
-        return enterDate;
+    public String getLogDate() {
+        return logDate;
     }
 
-    public String getEnterTime() {
-        return enterTime;
+    public String getLogTime() {
+        return logTime;
     }
 
-    public String getExitDate() {
-        return exitDate;
+    public String getUserName() {
+        return userName;
     }
 
-
-    public String getExitTime() {
-        return exitTime;
+    public String getUserID() {
+        return userID;
+    }
+    public String getRating() {
+        return rating;
     }
 
-    public String getPlaceID() {
-        return placeID;
-    }
-
-    public String getPlaceName() {
-        return placeName;
-    }
-
-    public String getLogStatus() {
-        return logStatus;
+    public String getRemark() {
+        return remark;
     }
 }

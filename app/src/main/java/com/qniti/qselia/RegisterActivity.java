@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     CheckBox term;
     Button register;
-    EditText name, phone, email, pass, confirmPass;
+    EditText name, phone, email,ccemail, pass, confirmPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         //address = findViewById(R.id.enAddress);
         phone = findViewById(R.id.enPhone);
         email = findViewById(R.id.enEmail);
+        ccemail = findViewById(R.id.enCcEmail);
         pass = findViewById(R.id.enPass);
         confirmPass = findViewById(R.id.enConfirmPass);
 
@@ -172,6 +173,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 final String nm = name.getText().toString().trim();
                 final String em = email.getText().toString().trim();
+                final String ccem = ccemail.getText().toString().trim();
                 final String ph = phone.getText().toString().trim();
                 //final String adr = address.getText().toString().trim();
                 final String pss = pass.getText().toString().trim();
@@ -244,6 +246,7 @@ public class RegisterActivity extends AppCompatActivity {
                             params.put("username", nm);
                             params.put("userphone", ph);
                             params.put("useremail", em);
+                            params.put("ccemail", ccem);
                             params.put("userpass", pss);
                             //params.put("useraddr", adr);
                             return params;

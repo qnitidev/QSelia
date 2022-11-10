@@ -1,6 +1,7 @@
 package com.qniti.qselia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,14 +11,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
@@ -25,8 +32,10 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.willy.ratingbar.ScaleRatingBar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,400 +47,127 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserLocationDetails extends AppCompatActivity {
 
-    String userID,name,phone,email,logid,enterDate,enterTime,exitDate,exitTime,logStatus,placeID,placeName,placePhone,placeAddress;
-    TextView nametxt,phonetxt,emailtxt,logidtxt,enterdatetime,exitdatetime,logstatustxt,placenametxt,placephonetxt,placeaddresstxt;
-    Button enter,exit;
-    String curTime;
-    SimpleDateFormat sdf;
-    Calendar currTime;
-    String currentDate;
-    MediaPlayer mediaPlayer;
-    ImageView tick;
-
+    String staffID,name,phone,email,logid,enterDate,enterTime,ratingDisplay,remarkDisplay,userID,undername,underphone,underemail;
+    TextView userNametxt,userEmailtxt,phoneNumtxt,logIDtxt,enterdateTxt,entertimeTxt,remarkTxt,noratingTv,underNameTxt,underphoneTxt,underemailTxt;
+    ScaleRatingBar ratingBarMain;
+    String ratingMsg;
+    int rating = 0;
+    ScaleRatingBar ratingBar;
+    EditText ratingMsgEditText;
+    Button giveReviewBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_location_details);
 
-        currTime = Calendar.getInstance();
-        sdf = new SimpleDateFormat("hh:mm:ss a");
-        currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
-
-        nametxt = findViewById(R.id.userNametxt);
-        phonetxt = findViewById(R.id.phoneNumtxt);
-        emailtxt = findViewById(R.id.userEmailtxt);
-        logidtxt = findViewById(R.id.logIDtxt);
-        enterdatetime = findViewById(R.id.enterdateNtime);
-        exitdatetime = findViewById(R.id.exitdatentime);
-        logstatustxt = findViewById(R.id.logStatus);
-        placenametxt = findViewById(R.id.placeName);
-        placephonetxt = findViewById(R.id.placephone);
-        placeaddresstxt = findViewById(R.id.placeaddress);
-        enter = findViewById(R.id.enterBtn);
-        exit = findViewById(R.id.exitBtn);
-        tick = findViewById(R.id.tick);
+        userNametxt = findViewById(R.id.userNametxt);
+        userEmailtxt = findViewById(R.id.userEmailtxt);
+        phoneNumtxt = findViewById(R.id.phoneNumtxt);
+        logIDtxt = findViewById(R.id.logIDtxt);
+        enterdateTxt = findViewById(R.id.enterdateTxt);
+        entertimeTxt = findViewById(R.id.entertimeTxt);
+        remarkTxt = findViewById(R.id.remarkTxt);
+        noratingTv = findViewById(R.id.noratingTv);
+        underNameTxt = findViewById(R.id.underNameTxt);
+        underphoneTxt = findViewById(R.id.underphoneTxt);
+        underemailTxt = findViewById(R.id.underemailTxt);
+        ratingBarMain = findViewById(R.id.ratingBarList);
+        giveReviewBtn = findViewById(R.id.giveReviewBtn);
 
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        userID = sharedPreferences.getString(Config.USER_ID2, "0");
+        staffID = sharedPreferences.getString(Config.USER_ID2, "0");
         name = sharedPreferences.getString(Config.NAME_ID2, "0");
         phone= sharedPreferences.getString(Config.PHONE_ID2, "0");
         email = sharedPreferences.getString(Config.EMAIL_ID2, "0");
         logid = sharedPreferences.getString(Config.LOG_ID2, "New Entry");
         enterDate = sharedPreferences.getString(Config.SCAN_DATE, "0");
         enterTime = sharedPreferences.getString(Config.SCAN_TIME, "0");
-        exitDate = sharedPreferences.getString(Config.EXIT_DATE, "");
-        exitTime = sharedPreferences.getString(Config.EXIT_TIME, "");
-        logStatus = sharedPreferences.getString(Config.LOG_STATUS, "New Entry");
-        placeID = sharedPreferences.getString(Config.PLACE_ID, "0");
+        ratingDisplay = sharedPreferences.getString(Config.LOG_STATUS, "null");
+        userID = sharedPreferences.getString(Config.PLACE_ID, "0");
+        remarkDisplay = sharedPreferences.getString(Config.REMARK, "0");
 
-        nametxt.setText(name);
-        phonetxt.setText(phone);
-        emailtxt.setText(email);
-        logidtxt.setText(logid);
-        enterdatetime.setText(enterDate+" "+enterTime);
-        exitdatetime.setText(exitDate+" "+exitTime);
-        logstatustxt.setText(logStatus);
-
-        //Toast.makeText(UserLocationDetails.this,placeID,Toast.LENGTH_LONG).show();
-
-        if("Not Exist".equalsIgnoreCase(logStatus)){
+        userNametxt.setText(capitalize(name));
+        userEmailtxt.setText(email);
+        phoneNumtxt.setText(phone);
+        logIDtxt.setText(logid);
+        enterdateTxt.setText(enterDate);
+        entertimeTxt.setText(enterTime);
+        remarkTxt.setText(remarkDisplay);
 
 
-        }else if ("New".equalsIgnoreCase(logStatus)){
-            loadPlaces();
-            exit.setVisibility(View.GONE);
-            enter.setVisibility(View.GONE);
-            tick.setVisibility(View.GONE);
-            logstatustxt.setTextColor(getResources().getColor(R.color.colorDeepBlue));
-            enterPlaces();
+        if (!("null".equalsIgnoreCase(ratingDisplay))){
 
-        }else if ("Inside".equalsIgnoreCase(logStatus)){
-            enter.setVisibility(View.GONE);
-            exit.setVisibility(View.VISIBLE);
-            tick.setVisibility(View.VISIBLE);
-            logstatustxt.setTextColor(getResources().getColor(R.color.colorLightGreen));
-            loadPlaces();
-        }else{
-            enter.setVisibility(View.GONE);
-            exit.setVisibility(View.GONE);
-            tick.setVisibility(View.GONE);
-            logstatustxt.setTextColor(getResources().getColor(R.color.red));
-            loadPlaces();
+            loadUnder();
+            noratingTv.setVisibility(View.GONE);
+            ratingBarMain.setVisibility(View.VISIBLE);
+            ratingBarMain.setRating(Float.valueOf(ratingDisplay));
+            giveReviewBtn.setVisibility(View.GONE);
+
+        }else {
+
+            loadUnder();
+            noratingTv.setVisibility(View.VISIBLE);
+            ratingBarMain.setVisibility(View.GONE);
+            giveReviewBtn.setVisibility(View.VISIBLE);
+
+
         }
 
-       // enter.setOnClickListener(new View.OnClickListener() {
-           // @Override
-           // public void onClick(View v) {
-
-               /* AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(UserLocationDetails.this);
-                alertDialogBuilder.setTitle("Confirmation");
-                alertDialogBuilder.setMessage("Do you want to enter the area?");
-
-                final Dialog dialog = new Dialog(UserLocationDetails.this);
-
-                alertDialogBuilder.setPositiveButton("YES",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
-                                dialog.setCanceledOnTouchOutside(true);
-*/
-                              /*  final ProgressDialog loading = ProgressDialog.show(UserLocationDetails.this,"Please Wait","Contacting Server",false,false);
-
-                                StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                                        Config.URL_API+"enterlog.php", new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String response) {
-
-                                        loading.dismiss();
-
-                                        if(response.contains("Success")){
-
-                                            mediaPlayer = MediaPlayer.create(UserLocationDetails.this, R.raw.checkin);
-                                            mediaPlayer.start();
-
-                                            Toast.makeText(UserLocationDetails.this, "Successfully enter", Toast.LENGTH_LONG)
-                                                    .show();
-
-                                            Intent intent = new Intent(UserLocationDetails.this, PastVisited.class);
-                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                            startActivity(intent);
-                                            finish();
-
-                                        }
-                                        else if(response.contains("Exist")) {
-
-                                            Toast.makeText(UserLocationDetails.this, "Sorry. You already enter the area.Please scan leave before entering again", Toast.LENGTH_LONG)
-                                                    .show();
-                                        }
-                                    }
-                                }, new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        loading.dismiss();
-                                        if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                                            Toast.makeText(UserLocationDetails.this,"No internet . Please check your connection",
-                                                    Toast.LENGTH_LONG).show();
-                                        }
-                                        else{
-
-                                            Toast.makeText(UserLocationDetails.this, error.toString(), Toast.LENGTH_LONG).show();
-                                        }
-                                    }
-                                }) {
-                                    @Override
-                                    protected Map<String, String> getParams() {
-                                        Map<String, String> params = new HashMap<String, String>();
-                                        params.put("userID", userID);
-                                        params.put("placeID", placeID);
-                                        params.put("enterDate", enterDate);
-                                        params.put("enterTime", enterTime);
-                                        return params;
-                                    }
-
-                                };
-
-                                stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                                        30000,
-                                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-                                RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                                requestQueue.add(stringRequest);
-
-                            }
-
-                        });
-/*
-                alertDialogBuilder.setNegativeButton("NO",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
-                                dialog.setCanceledOnTouchOutside(true);
-
-                            }
-                        });
-                alertDialogBuilder.setOnCancelListener(
-                        new DialogInterface.OnCancelListener() {
-                            @Override
-                            public void onCancel(DialogInterface dialog) {
-
-                            }
-                        }
-                );
-
-                //Showing the alert dialog
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.show();
-
-            }
-        }); */
-
-        exit.setOnClickListener(new View.OnClickListener() {
+        giveReviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                try {
-                    if (Settings.Global.getInt(getContentResolver(), Settings.Global.AUTO_TIME) == 0) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(UserLocationDetails.this);
+                //  builder.setTitle("Knowledge Base");
+                builder.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                        Toast.makeText(getApplicationContext(),
-                                "Please set Automatic Date & Time to ON in the Settings",
-                                Toast.LENGTH_LONG).show();
+                        rating = (int) ratingBar.getRating();
+                        ratingMsg = ratingMsgEditText.getText().toString().trim();
 
-                        startActivityForResult(
-                                new Intent(Settings.ACTION_DATE_SETTINGS), 0);
-                    } else if (Settings.Global.getInt(getContentResolver(),
-                            Settings.Global.AUTO_TIME_ZONE) == 0) {
-
-                        Toast.makeText(getApplicationContext(),
-                                "Please set Automatic Time Zone to ON in the Settings",
-                                Toast.LENGTH_LONG).show();
-
-                        startActivityForResult(
-                                new Intent(Settings.ACTION_DATE_SETTINGS), 0);
-                    }else {
-
-                        curTime = sdf.format(currTime.getTime());
-
-                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(UserLocationDetails.this);
-                        alertDialogBuilder.setTitle("Confirmation");
-                        alertDialogBuilder.setMessage("Do you want to leave the area?");
-
-                        final Dialog dialog = new Dialog(UserLocationDetails.this);
-
-                        alertDialogBuilder.setPositiveButton("YES",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        dialog.setCanceledOnTouchOutside(true);
-
-                                        final ProgressDialog loading = ProgressDialog.show(UserLocationDetails.this, "Please Wait", "Contacting Server", false, false);
-
-                                        StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                                                Config.URL_API + "exitlog.php", new Response.Listener<String>() {
-                                            @Override
-                                            public void onResponse(String response) {
-
-                                                loading.dismiss();
-
-                                                if (response.contains("Success")) {
-
-                                                    mediaPlayer = MediaPlayer.create(UserLocationDetails.this, R.raw.checkout);
-                                                    mediaPlayer.start();
-
-                                                    Toast.makeText(UserLocationDetails.this, "Successfully checking out. Thank you", Toast.LENGTH_LONG)
-                                                            .show();
-
-                                                    Intent intent = new Intent(UserLocationDetails.this, PastVisited.class);
-                                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                    startActivity(intent);
-                                                    finish();
+                          Toast.makeText(UserLocationDetails.this,String.valueOf(rating),Toast.LENGTH_LONG).show();
 
 
-                                                } else if (response.contains("Exist")) {
+                        sendRating();
 
-                                                    Toast.makeText(UserLocationDetails.this, "Sorry. You already enter the area.Please scan leave before entering again", Toast.LENGTH_LONG)
-                                                            .show();
-                                                }
-                                            }
-                                        }, new Response.ErrorListener() {
-                                            @Override
-                                            public void onErrorResponse(VolleyError error) {
-                                                loading.dismiss();
-                                                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                                                    Toast.makeText(UserLocationDetails.this, "No internet . Please check your connection",
-                                                            Toast.LENGTH_LONG).show();
-                                                } else {
-
-                                                    Toast.makeText(UserLocationDetails.this, error.toString(), Toast.LENGTH_LONG).show();
-                                                }
-                                            }
-                                        }) {
-                                            @Override
-                                            protected Map<String, String> getParams() {
-                                                Map<String, String> params = new HashMap<String, String>();
-                                                params.put("logID", logid);
-                                                params.put("exitDate", currentDate);
-                                                params.put("exitTime", curTime);
-                                                return params;
-                                            }
-
-                                        };
-
-                                        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                                                30000,
-                                                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                                                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-                                        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-                                        requestQueue.add(stringRequest);
-
-                                    }
-
-                                });
-
-                        alertDialogBuilder.setNegativeButton("NO",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        dialog.setCanceledOnTouchOutside(true);
-
-                                    }
-                                });
-                        alertDialogBuilder.setOnCancelListener(
-                                new DialogInterface.OnCancelListener() {
-                                    @Override
-                                    public void onCancel(DialogInterface dialog) {
-
-                                    }
-                                }
-                        );
-
-                        //Showing the alert dialog
-                        AlertDialog alertDialog = alertDialogBuilder.create();
-                        alertDialog.show();
                     }
-            } catch (Settings.SettingNotFoundException e) {
-                    e.printStackTrace();
-                }}
-            });
-    }
-    public void enterPlaces(){
+                });
 
-        final ProgressDialog loading = ProgressDialog.show(UserLocationDetails.this,"Please Wait","Contacting Server",false,false);
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                Config.URL_API+"enterlog.php", new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+                AlertDialog dialog = builder.create();
+                LayoutInflater inflater = getLayoutInflater();
+                View dialogLayout = inflater.inflate(R.layout.rating_popup, null);
 
-                loading.dismiss();
+                ratingBar = dialogLayout.findViewById(R.id.ratingBar);
+                ratingMsgEditText = dialogLayout.findViewById(R.id.editTextMsgPopup);
 
-                if(response.contains("Success")){
 
-                    mediaPlayer = MediaPlayer.create(UserLocationDetails.this, R.raw.checkin);
-                    mediaPlayer.start();
+                dialog.setView(dialogLayout);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                    Toast.makeText(UserLocationDetails.this, "Successfully checking in", Toast.LENGTH_LONG)
-                            .show();
+                dialog.show();
 
-                    Intent intent = new Intent(UserLocationDetails.this, PastVisited.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    finish();
-
-                }
-                else if(response.contains("Exist")) {
-
-                    Toast.makeText(UserLocationDetails.this, "Sorry. You already enter the area.Please scan leave before entering again", Toast.LENGTH_LONG)
-                            .show();
-                }
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                loading.dismiss();
-                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                    Toast.makeText(UserLocationDetails.this,"No internet . Please check your connection",
-                            Toast.LENGTH_LONG).show();
-                }
-                else{
-
-                    Toast.makeText(UserLocationDetails.this, error.toString(), Toast.LENGTH_LONG).show();
-                }
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("userID", userID);
-                params.put("placeID", placeID);
-                params.put("enterDate", enterDate);
-                params.put("enterTime", enterTime);
-                return params;
-            }
-
-        };
-
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                30000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        requestQueue.add(stringRequest);
-
+        });
     }
 
-
-    public void loadPlaces(){
+    public void loadUnder(){
 
         final ProgressDialog loading = ProgressDialog.show(this,"Please Wait","Contacting Server",false,false);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.URL_API+"loadplace.php?placeID="+placeID,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.URL_API+"loadunder.php?underID="+userID,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -446,14 +182,14 @@ public class UserLocationDetails extends AppCompatActivity {
                                 JSONObject user = array.getJSONObject(i);
 
                                 //adding the product to product list
-                                placeName = user.getString("placename");
-                                placePhone = user.getString("placephone");
-                                placeAddress = user.getString("placeaddr");
+                                undername = user.getString("username");
+                                underphone = user.getString("userphone");
+                                underemail = user.getString("useremail");
                             }
 
-                            placenametxt.setText("Name   : "+placeName);
-                            placephonetxt.setText("Phone   : "+placePhone);
-                            placeaddresstxt.setText("Address: "+placeAddress);
+                            underNameTxt.setText(capitalize(undername));
+                            underphoneTxt.setText(underphone);
+                            underemailTxt.setText(underemail);
 
                             loading.dismiss();
                         } catch (JSONException e) {
@@ -482,11 +218,89 @@ public class UserLocationDetails extends AppCompatActivity {
         //adding our stringrequest to queue
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+
+
+    }
+
+    public void sendRating(){
+
+        final ProgressDialog loading = ProgressDialog.show(UserLocationDetails.this,"Please Wait","Contacting Server",false,false);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                Config.URL_API+"enterlog.php", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                loading.dismiss();
+
+                if(response.contains("Success")){
+
+                    Toast.makeText(UserLocationDetails.this, "Successfully review", Toast.LENGTH_LONG)
+                            .show();
+
+                    Intent intent = new Intent(UserLocationDetails.this, PastVisited.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+
+                }
+                else  {
+
+                    Toast.makeText(UserLocationDetails.this, "Error. Please try again", Toast.LENGTH_LONG)
+                            .show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loading.dismiss();
+                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                    Toast.makeText(UserLocationDetails.this,"No internet . Please check your connection",
+                            Toast.LENGTH_LONG).show();
+                }
+                else{
+
+                    Toast.makeText(UserLocationDetails.this, error.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("staffID", staffID);
+                params.put("userID", userID);
+                params.put("rating", String.valueOf(rating));
+                params.put("remark", ratingMsg);
+
+                return params;
+            }
+
+        };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                30000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+
+
     }
     public void onBackPressed() {
         Intent i = new Intent(UserLocationDetails.this, PastVisited.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
         finish();
+    }
+
+    private String capitalize(String capString){
+        StringBuffer capBuffer = new StringBuffer();
+        Matcher capMatcher = Pattern.compile("([a-z-éá])([a-z-éá]*)", Pattern.CASE_INSENSITIVE).matcher(capString);
+        while (capMatcher.find()){
+            capMatcher.appendReplacement(capBuffer, capMatcher.group(1).toUpperCase() + capMatcher.group(2).toLowerCase());
+        }
+
+        return capMatcher.appendTail(capBuffer).toString();
     }
 }

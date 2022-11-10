@@ -3,6 +3,7 @@ package com.qniti.qselia;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -33,10 +34,12 @@ import java.util.List;
 
 public class PastVisited extends AppCompatActivity implements PastVisitedAdapter.OnItemClicked{
 
-    ImageView imgGone,imgJobOff;
-    TextView txtGone,txtJobOff;
+ //   ImageView imgGone,imgJobOff;
+   // TextView txtGone,txtJobOff;
     List<Log> logList;
     String userID;
+    SwipeRefreshLayout refreshLayout;
+    SwipeRefreshLayout refreshLayout2;
 
     //the recyclerview
     RecyclerView recyclerView;
@@ -45,8 +48,8 @@ public class PastVisited extends AppCompatActivity implements PastVisitedAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_past_visited);
         recyclerView = findViewById(R.id.recylcerView);
-        imgGone = findViewById(R.id.imageViewGone);
-        txtGone = findViewById(R.id.textViewGone);
+        //imgGone = findViewById(R.id.imageViewGone);
+       // txtGone = findViewById(R.id.textViewGone);
 
         SharedPreferences sharedPreferences = getSharedPreferences(Config.SHARED_PREF_NAME, Context.MODE_PRIVATE);
         userID = sharedPreferences.getString(Config.USER_ID2, "Not Available");
@@ -64,12 +67,40 @@ public class PastVisited extends AppCompatActivity implements PastVisitedAdapter
 
         loadLog();
 
+        refreshLayout = findViewById(R.id.refresh_layout);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                logList.clear();
+
+                loadLog();
+
+                refreshLayout.setRefreshing(false);
+
+            }
+        });
+
+        refreshLayout2 = findViewById(R.id.refresh_layout_2);
+        refreshLayout2.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                logList.clear();
+
+                loadLog();
+
+                refreshLayout2.setRefreshing(false);
+
+            }
+        });
+
     }
 
     public void loadLog() {
         final ProgressDialog loading = ProgressDialog.show(this, "Please Wait", "Contacting Server", false, false);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.URL_API + "loadpastvisit.php?userID=" + userID,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.URL_API + "loadpastvisit.php?staffID=" + userID,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -85,14 +116,13 @@ public class PastVisited extends AppCompatActivity implements PastVisitedAdapter
 
                                 //adding the log to log list
                                 logList.add(new Log(
-                                        log.getString("logID"),
-                                        log.getString("enterDate"),
-                                        log.getString("enterTime"),
-                                        log.getString("exitDate"),
-                                        log.getString("exitTime"),
-                                        log.getString("placeID"),
-                                        log.getString("placename"),
-                                        log.getString("logStatus")
+                                        log.getString("staff_logID"),
+                                        log.getString("logDate"),
+                                        log.getString("logTime"),
+                                        log.getString("username"),
+                                        log.getString("userID"),
+                                        log.getString("rating"),
+                                        log.getString("remark")
                                 ));
                             }
 
@@ -102,12 +132,13 @@ public class PastVisited extends AppCompatActivity implements PastVisitedAdapter
                             adapter.setOnClick(PastVisited.this);
 
                             if (adapter.getItemCount() == 0) {
-                                imgGone.setVisibility(View.VISIBLE);
-                                txtGone.setVisibility(View.VISIBLE);
-                            } else {
+                                refreshLayout2.setVisibility(View.VISIBLE);
+                                refreshLayout.setVisibility(View.GONE);
 
-                                imgGone.setVisibility(View.GONE);
-                                txtGone.setVisibility(View.GONE);
+                            } else{
+                                refreshLayout2.setVisibility(View.GONE);
+                                refreshLayout.setVisibility(View.VISIBLE);
+
                             }
 
                             //add shared preference ID,nama,credit here
@@ -158,13 +189,13 @@ public class PastVisited extends AppCompatActivity implements PastVisitedAdapter
 
         // Adding values to editor
 
-        editor.putString(Config.LOG_ID2, log.getLogID());
-        editor.putString(Config.SCAN_DATE, log.getEnterDate());
-        editor.putString(Config.SCAN_TIME, log.getEnterTime());
-        editor.putString(Config.EXIT_DATE, log.getExitDate());
-        editor.putString(Config.EXIT_TIME, log.getExitTime());
-        editor.putString(Config.PLACE_ID, log.getPlaceID());
-        editor.putString(Config.LOG_STATUS, log.getLogStatus());
+        editor.putString(Config.LOG_ID2, log.getStaff_logID());
+        editor.putString(Config.SCAN_DATE, log.getLogDate());
+        editor.putString(Config.SCAN_TIME, log.getLogTime());
+        editor.putString(Config.EXIT_DATE, log.getUserName());
+        editor.putString(Config.REMARK, log.getRemark());
+        editor.putString(Config.PLACE_ID, log.getUserID());
+        editor.putString(Config.LOG_STATUS, log.getRating());
 
 
 

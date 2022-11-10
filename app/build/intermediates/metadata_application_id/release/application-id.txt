@@ -1,1 +1,1 @@
-com.qniti.qhadir
+com.qniti.selia

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sofiamediumpro"
+        android:text="Rate Staff"
+        android:textAlignment="center"
+        android:textColor="@color/font_blue"
+        android:textSize="@dimen/largetext"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/mediumtext"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:fontFamily="@font/sofiamediumpro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rating" />
+
+    <com.willy.ratingbar.ScaleRatingBar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ratingBar"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srb_numStars="5"
+        app:srb_minimumStars="1"
+        app:srb_rating="3"
+        app:srb_starWidth="30dp"
+        app:srb_starHeight="30dp"
+        app:srb_starPadding="15dp"
+        app:srb_stepSize="1"
+        app:srb_isIndicator="false"
+        app:srb_clickable="true"
+        app:srb_scrollable="true"
+        app:srb_clearRatingEnabled="true"
+        app:srb_drawableEmpty="@drawable/ic_star_empty"
+        app:srb_drawableFilled="@drawable/ic_star_filled">
+    </com.willy.ratingbar.ScaleRatingBar>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:textSize="@dimen/mmtext"
+        android:textStyle="bold"
+        android:fontFamily="@font/sofiamediumpro"
+        android:layout_width="match_parent"
+        android:textColor="@color/colorBlack"
+        android:layout_height="wrap_content"
+        android:text="Message" />
+
+    <EditText
+        android:id="@+id/editTextMsgPopup"
+        android:padding="10dp"
+        android:textSize="@dimen/mmtext"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:background="@drawable/textboxcornerwhitev2"
+        android:hint="Type..." />
+
+</LinearLayout>

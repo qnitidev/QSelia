@@ -17,6 +17,7 @@ public class Config {
     public static final String NAME_ID2 = "nameID2";
     public static final String PHONE_ID2 = "phoneID2";
     public static final String EMAIL_ID2 = "emailID2";
+    public static final String CC_EMAIL_ID2 = "ccemailID2";
     public static final String LOG_ID2 = "logID2";
     public static final String PLACE_ID = "placeID";
     public static final String ADDRESS_ID2 = "useraddress";

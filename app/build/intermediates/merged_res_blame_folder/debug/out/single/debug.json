@@ -128,6 +128,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_employee.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\layout_rating_popup.xml.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\layout\\rating_popup.xml"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_qr_code.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_qr_code.png"
     },
@@ -194,6 +198,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_feedback.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\feedback.png"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_star_empty.xml.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_star_empty.xml"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_textboxcornerwhite.xml.flat",
@@ -280,6 +288,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_adaptive_back.png"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_no_data.jpg.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\no_data.jpg"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_profile.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\layout\\activity_profile.xml"
     },
@@ -308,6 +320,14 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_user.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_star_filled.xml.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_star_filled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\layout_past_visited_list_backup.xml.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\layout\\past_visited_list_backup.xml"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_buttoncornerpurplegrad.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\buttoncornerpurplegrad.xml"
     },
@@ -330,6 +350,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_no_food.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_no_food.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_adaptergreystrokewhite.xml.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\adaptergreystrokewhite.xml"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -462,6 +486,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_transaction.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_transaction.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_textboxcornerwhitev2.xml.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable-v24\\textboxcornerwhitev2.xml"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_activeon.xml.flat",

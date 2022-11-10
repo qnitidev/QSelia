@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/default_bg"
     android:orientation="vertical"
     >
 
@@ -26,8 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
-            android:text="Visiting Details"
-            android:textSize="22dp"
+            android:textColor="@color/font_blue"
+            android:text="Supervising Details"
+            android:textSize="@dimen/largetext"
             android:textStyle="bold" />
 
         <ScrollView
@@ -40,6 +41,8 @@
                 android:orientation="vertical" >
 
                 <LinearLayout
+                    android:padding="10dp"
+                    android:background="@color/colorWhite"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -55,13 +58,15 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="User Name"
+                            android:text="Supervisor Name"
                             android:textSize="14dp"
+                            android:textColor="@color/label_grey"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/userNametxt"
                             android:textSize="14dp"
+                            android:textColor="@color/body_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="buyerName" />
@@ -72,12 +77,14 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:textSize="14dp"
+                            android:textColor="@color/label_grey"
                             android:text="Phone Number"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/phoneNumtxt"
                             android:textSize="14dp"
+                            android:textColor="@color/body_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView" />
@@ -87,13 +94,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:textColor="@color/label_grey"
                             android:textSize="14dp"
-                            android:text="Enter Date and Time"
+                            android:text="Check Date"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/enterdateNtime"
+                            android:id="@+id/enterdateTxt"
                             android:textSize="14dp"
+                            android:textColor="@color/body_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView" />
@@ -102,35 +111,21 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="18dp"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textSize="@dimen/mediumtext"
+                            android:textColor="@color/label_grey"
                             android:layout_marginTop="5dp"
-                            android:text="Log Status"
+                            android:text="Remark"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/logStatus"
+                            android:id="@+id/remarkTxt"
                             android:layout_width="match_parent"
-                            android:textStyle="bold"
-                            android:textSize="18dp"
+                            android:textStyle="normal"
+                            android:textSize="@dimen/smalltext"
+                            android:textColor="@color/body_grey"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="No Data" />
 
-                        <TextView
-                            android:id="@+id/cancelTxtUp"
-                            android:layout_marginTop="5dp"
-                            android:textStyle="bold"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Sebab Batal"
-                            android:visibility="gone"/>
-
-                        <TextView
-                            android:id="@+id/cancelTxt"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="info----"
-                            android:visibility="gone"/>
 
                     </LinearLayout>
 
@@ -145,13 +140,15 @@
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="User Email"
+                            android:text="Supervisor Email"
                             android:textSize="14dp"
+                            android:textColor="@color/label_grey"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/userEmailtxt"
                             android:textSize="14dp"
+                            android:textColor="@color/body_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="TextView" />
@@ -161,13 +158,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="Log ID"
+                            android:text="Supervisor Log ID"
                             android:textSize="14dp"
+                            android:textColor="@color/label_grey"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/logIDtxt"
                             android:textSize="14dp"
+                            android:textColor="@color/body_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="New Entry" />
@@ -178,71 +177,157 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:textSize="14dp"
-                            android:text="Exit Date and Time"
+                            android:textColor="@color/label_grey"
+                            android:text="Check Time"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/exitdatentime"
+                            android:id="@+id/entertimeTxt"
                             android:layout_width="match_parent"
                             android:textSize="14dp"
+                            android:textColor="@color/body_grey"
                             android:layout_height="wrap_content"
                             android:text="TextView" />
 
-                        <ImageView
-                            android:id="@+id/tick"
+                        <TextView
                             android:layout_marginTop="5dp"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="center"
-                            android:padding="10dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_tick_grad" />
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:textColor="@color/label_grey"
+                            android:text="Rating"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/noratingTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:textColor="@color/body_grey"
+                            android:fontFamily="@font/sofiamediumpro"
+                            android:text="No Rating"
+                            android:textSize="@dimen/smalltext" />
+
+                        <com.willy.ratingbar.ScaleRatingBar
+                            android:layout_marginTop="5dp"
+                            android:visibility="gone"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/ratingBarList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srb_numStars="5"
+                            app:srb_minimumStars="1"
+                            app:srb_rating="1"
+                            android:layout_gravity="left"
+                            app:srb_starWidth="15dp"
+                            app:srb_starHeight="15dp"
+                            app:srb_starPadding="1dp"
+                            app:srb_stepSize="1"
+                            app:srb_isIndicator="true"
+                            app:srb_clickable="false"
+                            app:srb_scrollable="false"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_drawableEmpty="@drawable/ic_star_empty"
+                            app:srb_drawableFilled="@drawable/ic_star_filled">
+                        </com.willy.ratingbar.ScaleRatingBar>
 
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/textboxcornergrey"
                     android:layout_marginTop="30dp"
-                    android:padding="10dp"
                     android:orientation="vertical">
-
                     <TextView
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18dp"
-                        android:text="Place Information"
+                        android:textSize="@dimen/mediumtext"
+                        android:textColor="@color/font_blue"
+                        android:text="Staff Information"
                         android:textStyle="bold" />
 
-                    <TextView
-
-                        android:id="@+id/placeName"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:padding="10dp"
                         android:layout_marginTop="10dp"
-                        android:text="Place Name"
-                        android:textSize="18dp" />
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:background="@drawable/adaptergreystrokewhite"
+                        android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:fontFamily="@font/sofiamediumpro"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="STAFF NAME"
+                            android:textColor="@color/label_grey"
+                            android:textSize="@dimen/xstext" />
+
+                        <TextView
+                            android:id="@+id/underNameTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:fontFamily="@font/sofiamediumpro"
+                            android:text="TextView"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/mediumtext"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:fontFamily="@font/sofiamediumpro"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PHONE"
+                        android:textColor="@color/label_grey"
+                        android:textSize="@dimen/xstext" />
 
                     <TextView
 
-                        android:id="@+id/placephone"
+                        android:id="@+id/underphoneTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Phone"
+                        android:textColor="@color/body_grey"
                         android:layout_marginTop="5dp"
                         android:textSize="18dp" />
 
                     <TextView
-
-                        android:id="@+id/placeaddress"
+                        android:fontFamily="@font/sofiamediumpro"
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Address"
+                        android:text="EMAIL"
+                        android:textColor="@color/label_grey"
+                        android:textSize="@dimen/xstext" />
+
+                    <TextView
+
+                        android:id="@+id/underemailTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/body_grey"
                         android:layout_marginTop="5dp"
                         android:textSize="18dp" />
 
+                </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -252,7 +337,7 @@
 
 
                     <Button
-                        android:id="@+id/exitBtn"
+                        android:id="@+id/giveReviewBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
@@ -262,10 +347,10 @@
                         android:layout_marginTop="20dp"
                         android:textSize="14dp"
                         android:background="@drawable/buttoncornerblueline"
-                        android:text="Click here to check-out"
+                        android:text="Click here to review staff"
                         android:textColor="@color/colorDeepBlue" />
 
-                    <Button
+              <!--      <Button
                         android:id="@+id/enterBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -276,7 +361,7 @@
                         android:textSize="14dp"
                         android:background="@drawable/buttoncornerbluegrad"
                         android:text="Click here to Check-IN"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff" /> -->
 
                 </LinearLayout>
             </LinearLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.qniti.qhadir"
+    package="com.qniti.selia"
     android:versionCode="2"
     android:versionName="1.1" >
 
@@ -32,7 +32,7 @@
         android:required="false" />
 
     <application
-        android:name="com.qniti.qhadir.CustomFontApp"
+        android:name="com.qniti.qselia.CustomFontApp"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
@@ -42,37 +42,37 @@
         android:supportsRtl="true"
         android:theme="@style/SplashTheme" >
         <activity
-            android:name="com.qniti.qhadir.ForgetPassword"
+            android:name="com.qniti.qselia.ForgetPassword"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qniti.qhadir.ChangePassword"
+            android:name="com.qniti.qselia.ChangePassword"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qniti.qhadir.Profile"
+            android:name="com.qniti.qselia.Profile"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qniti.qhadir.PastVisited"
+            android:name="com.qniti.qselia.PastVisited"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qniti.qhadir.UserLocationDetails"
+            android:name="com.qniti.qselia.UserLocationDetails"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qniti.qhadir.RegisterActivity"
+            android:name="com.qniti.qselia.RegisterActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.qniti.qhadir.LoginActivity"
+            android:name="com.qniti.qselia.LoginActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" >
@@ -83,7 +83,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.qniti.qhadir.MainActivity"
+            android:name="com.qniti.qselia.MainActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait" />

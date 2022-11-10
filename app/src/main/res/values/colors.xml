@@ -23,6 +23,11 @@
     <color name="colorLightBlue">#26D0CE</color>
     <color name="colorDeepBlue">#1A2980</color>
     <color name="colorLightGreen">#33cc00</color>
+    <color name="font_blue">#378694</color>
+    <color name="label_grey">#708090</color>
+    <color name="body_grey">#384149</color>
+    <color name="colorDarkGrey">#8d8c8c</color>
+    <color name="default_bg">#F8F8F8</color>
 
 
 

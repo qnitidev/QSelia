@@ -179,6 +179,7 @@
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="backgroundcolor">#000000</color>
+    <color name="body_grey">#384149</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -196,6 +197,7 @@
     <color name="colorBackgroundDark">#ffffb3</color>
     <color name="colorBlack">#000000</color>
     <color name="colorCheckbox">#cc3333</color>
+    <color name="colorDarkGrey">#8d8c8c</color>
     <color name="colorDeepBlue">#1A2980</color>
     <color name="colorHeader">#990033</color>
     <color name="colorHeaderDark">#cc0000</color>
@@ -211,6 +213,7 @@
     <color name="colorReport">#ffb3b3</color>
     <color name="colorSplash">#cc3333</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="default_bg">#F8F8F8</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_default_color_primary">#3F51B5</color>
     <color name="design_default_color_primary_dark">#303F9F</color>
@@ -228,10 +231,12 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="error_color_material_dark">#ff7043</color>
     <color name="error_color_material_light">#ff5722</color>
+    <color name="font_blue">#378694</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="label_grey">#708090</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -364,6 +369,8 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -420,6 +427,7 @@
     <dimen name="design_textinput_caption_translate_y">5dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
+    <dimen name="fab_margin">16dp</dimen>
     <dimen name="fastscroll_default_thickness">8dp</dimen>
     <dimen name="fastscroll_margin">0dp</dimen>
     <dimen name="fastscroll_minimum_range">50dp</dimen>
@@ -433,6 +441,9 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="largetext">22dp</dimen>
+    <dimen name="mediumtext">18dp</dimen>
+    <dimen name="mmtext">16dp</dimen>
     <dimen name="mtrl_bottomappbar_fabOffsetEndMode">60dp</dimen>
     <dimen name="mtrl_bottomappbar_fab_cradle_margin">5dp</dimen>
     <dimen name="mtrl_bottomappbar_fab_cradle_rounded_corner_radius">8dp</dimen>
@@ -481,6 +492,8 @@
     <dimen name="mtrl_textinput_box_stroke_width_focused">2dp</dimen>
     <dimen name="mtrl_textinput_outline_box_expanded_padding">16dp</dimen>
     <dimen name="mtrl_toolbar_default_height">56dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -496,6 +509,8 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="sltext">20dp</dimen>
+    <dimen name="smalltext">14dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -504,6 +519,7 @@
     <dimen name="tooltip_vertical_padding">6.5dp</dimen>
     <dimen name="tooltip_y_offset_non_touch">0dp</dimen>
     <dimen name="tooltip_y_offset_touch">16dp</dimen>
+    <dimen name="xstext">12dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="accessibility_action_clickable_span" type="id"/>
@@ -3800,6 +3816,21 @@
         <!-- Animated Drawable to use for multiple choice indicators. -->
         <attr format="reference" name="listChoiceIndicatorSingleAnimated"/>
 
+    </declare-styleable>
+    <declare-styleable name="BaseRatingBar">
+        <attr format="integer" name="srb_numStars"/>
+        <attr format="float" name="srb_minimumStars"/>
+        <attr format="float" name="srb_rating"/>
+        <attr format="dimension" name="srb_starPadding"/>
+        <attr format="reference" name="srb_drawableEmpty"/>
+        <attr format="reference" name="srb_drawableFilled"/>
+        <attr format="boolean" name="srb_isIndicator"/>
+        <attr format="boolean" name="srb_scrollable"/>
+        <attr format="boolean" name="srb_clickable"/>
+        <attr format="boolean" name="srb_clearRatingEnabled"/>
+        <attr format="dimension" name="srb_starWidth"/>
+        <attr format="dimension" name="srb_starHeight"/>
+        <attr format="float" name="srb_stepSize"/>
     </declare-styleable>
     <declare-styleable name="BottomAppBar"><attr name="backgroundTint"/><attr name="fabAlignmentMode">
       

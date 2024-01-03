@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
         dontShowAgain = (CheckBox) eulaLayout.findViewById(R.id.skip);
         adb.setView(eulaLayout);
         adb.setCancelable(false);
-        adb.setMessage(Html.fromHtml("For <b>NEW</b> user, please create a <b>Qhadir</b> account before login" +
+        adb.setMessage(Html.fromHtml("For <b>NEW</b> user, please create a <b>JobTracker Selia</b> account before login" +
                 "<br><br>" +
                 "<b>Your current staff ID and password will not work with this application</b>"));
 
@@ -119,11 +119,11 @@ public class LoginActivity extends AppCompatActivity {
            public void onClick(View v) {
 
                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(LoginActivity.this);
-               alertDialogBuilder.setMessage(Html.fromHtml("<b>Qhadir</b> is a mobile application used to help track attendance of individuals " +
+               alertDialogBuilder.setMessage(Html.fromHtml("<b>Kita Selia</b> is a mobile application used to help track attendance of individuals " +
                        "within a specific location conveniently without filling up hard copy forms or online forms " +
                        ".  For more information, please contact us.<br>" +
                        "<br>" +
-                       "<b>Qhadir Admin</b><br>" +
+                       "<b>JobTracker Selia Admin</b><br>" +
                        "<b>Email: shahrulazmi1972@gmail.com</b><br>" +
                        "<b>Phone: 0134808554</b>"));
 

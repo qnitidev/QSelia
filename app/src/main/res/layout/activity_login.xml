@@ -182,6 +182,7 @@
                         android:layout_height="wrap_content"
                         android:text="© 2022 Qniti Management. All Rights Reserved"
                         android:textAlignment="center"
+                        android:visibility="gone"
                         android:textColor="@color/colorBlack"
                         android:textSize="14dp" />
                 </LinearLayout>

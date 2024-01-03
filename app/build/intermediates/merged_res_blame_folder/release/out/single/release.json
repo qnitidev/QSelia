@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\bluegrad.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
@@ -72,6 +76,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\gradientbg45d.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_gradientbottomnavi.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\gradientbottomnavi.xml"
     },
@@ -80,12 +88,20 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_dashboard_black_24dp.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_main_icon.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\main_icon.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\raw_checkin.mp3.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\raw\\checkin.mp3"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_confirmpage.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\confirmpage.png"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_background_splash.xml.flat",
@@ -180,6 +196,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v24\\ic_qr_code.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -198,6 +218,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_layoutcornerred.xml.flat",
@@ -260,6 +284,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\layoutcornergrey.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_monochrome.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_groceries.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_groceries.xml"
     },
@@ -282,6 +310,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_individualbtn.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\individualbtn.png"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_down.xml.flat",
@@ -332,6 +364,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\no_data.jpg"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_noringlogo.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\noringlogo.png"
     },
@@ -346,6 +382,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_info.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_buttoncornerredgrad2.xml.flat",
@@ -412,6 +452,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_lepas.xml"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_monochrome.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_buttoncornerredgrad.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\buttoncornerredgrad.xml"
     },
@@ -422,6 +466,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_forget_password.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\layout\\activity_forget_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_monochrome.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_monochrome.png"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_buttoncornergradientgreen.xml.flat",
@@ -512,6 +560,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\bigicon.png"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_rippleeffect.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\rippleeffect.xml"
     },
@@ -542,6 +594,10 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_tick.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_tick.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_monochrome.png"
     },
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_textboxcornergrey.xml.flat",
@@ -600,6 +656,10 @@
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_adaptive_back.png"
     },
     {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_adaptive_back.png"
     },
@@ -650,5 +710,9 @@
     {
         "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\drawable_ic_activeoff.xml.flat",
         "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\drawable\\ic_activeoff.xml"
+    },
+    {
+        "merged": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_monochrome.png.flat",
+        "source": "C:\\Users\\Bie\\StudioProjects\\Qselia\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_monochrome.png"
     }
 ]

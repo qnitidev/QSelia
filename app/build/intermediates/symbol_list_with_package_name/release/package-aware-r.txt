@@ -1654,9 +1654,13 @@ mipmap ic_action_name
 mipmap ic_launcher
 mipmap ic_launcher_adaptive_back
 mipmap ic_launcher_adaptive_fore
+mipmap ic_launcher_background
+mipmap ic_launcher_foreground
+mipmap ic_launcher_monochrome
 mipmap ic_launcher_round
 mipmap iconfeedback4
 mipmap individualbtn
+mipmap main_icon
 mipmap menu
 mipmap menubutton
 mipmap menuicon

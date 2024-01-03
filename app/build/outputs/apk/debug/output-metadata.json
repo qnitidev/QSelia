@@ -10,9 +10,9 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1,
-      "versionName": "1.0",
-      "outputFile": "app-debug.apk"
+      "versionCode": 3,
+      "versionName": "1.2",
+      "outputFile": "KitaSelia_29112023_1137_VC3_debug.apk"
     }
   ]
 }

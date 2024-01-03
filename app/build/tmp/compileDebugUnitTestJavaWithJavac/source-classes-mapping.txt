@@ -1,0 +1,2 @@
+com/qniti/qselia/ExampleUnitTest.java
+ com.qniti.qselia.ExampleUnitTest

@@ -1,0 +1,4 @@
+com/qniti/qselia/ExampleInstrumentedTest.java
+ com.qniti.qselia.ExampleInstrumentedTest
+com/qniti/qselia/test/BuildConfig.java
+ com.qniti.qselia.test.BuildConfig

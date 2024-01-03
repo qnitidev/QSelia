@@ -1,0 +1,3 @@
+com.qniti.selia.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
